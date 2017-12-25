@@ -267,7 +267,18 @@ function getMessage(msg) {
                 str = '<img class="chartlet" onload="loadImg()" src="./images/' + catalog + '/' + chartvar + '.png">';
             } else if (content.type == 4) {
                 str = msg.fromNick + '发起了[白板互动]';
-            } else {
+            } else if (content.type == 5) {
+		var obj = content.data;
+		str = `<a class="imgtxt" href=${obj.link_url} target="_blank">`;
+		str += `<div class="imgtxt-title">${obj.title}</div>`;
+		if (obj.image_url && obj.image_url.trim() != '') {
+			str += `<img class="imgtxt-img" src=${obj.image_url} />`;
+		}
+		if (obj.describe && obj.describe.trim() != '') {
+			str += `<div class="imgtxt-describe">${obj.describe}</div>`;
+		}
+		str += `</a>`;
+	    } else {
                 str = sentStr + '一条[自定义]消息，请到手机或电脑客户端查看';
             }
             break;
