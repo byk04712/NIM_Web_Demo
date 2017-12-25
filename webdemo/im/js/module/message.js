@@ -167,6 +167,24 @@ YX.fn.sendTextMessage = function () {
         to = this.crtSessionAccount,
         text = this.$messageText.val().trim()
     if (!!to && !!text) {
+        /*
+        // 添加此处代码是用来开发调试发送自定义的消息类型，当发送 custom 给对方时进入该逻辑
+        if (text.length > 0 && text == 'custom') {
+            // 此处不可能是写死的，应该是后台可配置的，发送的数据结构如下
+            var content = {
+                type: 5,  // 自定义消息类型为5，此处的消息类型必须和其他平台的图文消息类型一致
+                data: {
+                    title: '暖冬季欢乐送',   // 消息标题
+                    describe: '家具满1000元减100元再返100元现金券！点击查看详情！',   // 消息描述
+                    link_url: 'https://www.jianshu.com/p/dadd344b6413',  // 点击跳转的URL
+                    image_url: 'https://netease.im/res/image/download/section1.png?v=002' // 消息中的图片地址
+                }
+            };
+            // 发送自定义消息
+            this.mysdk.sendCustomMessage(scene, to, content, this.sendMsgDone.bind(this));
+            return;
+        }
+        */
         if (text.length > 500) {
             alert('消息长度最大为500字符')
         } else if (text.length === 0) {
