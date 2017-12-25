@@ -164,7 +164,18 @@ function buildSessionMsg(msg) {
                 text += '[贴图]';
             } else if (content.type === 4) {
                 text += '[白板]';
-            } else {
+            } else if (content.type == 5) {
+				var obj = content.data;
+				str = `<a class="imgtxt" href=${obj.link_url} target="_blank">`;
+				str += `<div class="imgtxt-title">${obj.title}</div>`;
+				if (obj.image_url && obj.image_url.trim() != '') {
+					str += `<img class="imgtxt-img" src=${obj.image_url} />`;
+				}
+				if (obj.describe && obj.describe.trim() != '') {
+					str += `<div class="imgtxt-describe">${obj.describe}</div>`;
+				}
+				str += `</a>`;
+			} else {
                 text += '[自定义消息]';
             }
             break;
