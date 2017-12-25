@@ -421,6 +421,48 @@ html, body {
     width: 120px;
     margin: 0;
 }
+.msg .cnt .imgtxt {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	padding: 10px;
+}
+.msg .cnt .imgtxt .imgtxt-title {
+	color: #1865b1;
+	line-height: 24px;
+	font-size: 14px;
+	font-weight: bold;
+	width: 100%;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	line-clamp: 1;
+	-webkit-line-clamp: 1;
+	-moz-box-orient: vertical;
+	-webkit-box-orient: vertical;
+}
+.msg .cnt .imgtxt .imgtxt-img {
+	max-height: 160px !important;
+	margin: 10px 0;
+	border-top: 1px #e6e6e6 solid;
+	border-bottom: 1px #e6e6e6 solid;
+	padding: 10px 0;
+}
+.msg .cnt .imgtxt .imgtxt-describe {
+	color: #1865b1;
+	font-size: 12px;
+	text-align: left;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	line-clamp: 3;
+	-webkit-line-clamp: 3;
+	-moz-box-orient: vertical;
+	-webkit-box-orient: vertical;
+}
 .arrow {
     background: url(../images/msg.png) no-repeat 9999px 9999px;
 }
